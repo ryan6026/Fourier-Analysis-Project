@@ -50,12 +50,10 @@ void readHeader()
     filelength = getFileSize(wavFile);
 
     cout << "File is                    :" << filelength << " bytes." << endl;
-
     cout << "RIFF header                :" << wavHeader.RIFF[0]
          << wavHeader.RIFF[1]
          << wavHeader.RIFF[2]
          << wavHeader.RIFF[3] << endl;
-
     cout << "WAVE header                :" << wavHeader.WAVE[0]
          << wavHeader.WAVE[1]
          << wavHeader.WAVE[2]
@@ -66,9 +64,8 @@ void readHeader()
          << wavHeader.fmt[2]
          << wavHeader.fmt[3]
          << endl;
-
-    cout << "Data size                  :" << wavHeader.ChunkSize << endl;
-
+    cout << "Data size      :" << wavHeader.ChunkSize << endl;
+    
     // Display the sampling Rate form the header
     cout << "Sampling Rate              :" << wavHeader.SamplesPerSec << endl;
     cout << "Number of bits used        :" << wavHeader.bitsPerSample << endl;
@@ -77,15 +74,11 @@ void readHeader()
     cout << "Data length                :" << wavHeader.Subchunk2Size << endl;
     cout << "Audio Format               :" << wavHeader.AudioFormat << endl;
     // Audio format 1=PCM,6=mulaw,7=alaw, 257=IBM Mu-Law, 258=IBM A-Law, 259=ADPCM
-
-
     cout << "Block align                :" << wavHeader.blockAlign << endl;
-
     cout << "Data string                :" << wavHeader.Subchunk2ID[0]
          << wavHeader.Subchunk2ID[1]
          << wavHeader.Subchunk2ID[2]
-         << wavHeader.Subchunk2ID[3]
-         << endl;
+         << wavHeader.Subchunk2ID[3] << endl;
 }
 
 int main()
